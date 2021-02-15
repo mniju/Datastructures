@@ -10,7 +10,7 @@ class BinaryTreeNode:
 
 #build the subtree
 # Hint the last elemnt is the root
-def binary_tree_from_preorder_inorder(postorder:List[int],inorder:List[int])->BinaryTreeNode:
+def binary_tree_from_postorder_inorder(postorder:List[int],inorder:List[int])->BinaryTreeNode:
     #Hash table for the sequence from inorder
     node_to_inorder_idx = {data:i for i,data in enumerate(inorder)}
     def binary_tree_from_postorder_inorder_helper(postorder_start,postorder_end,inorder_start,inorder_end):
@@ -76,5 +76,5 @@ inorder = [ 'F','B','A','E','H','C','D','I','G']
 preorder = ['H','B','F','E','A','C','D','G','I']
 postorder = ['F','B','A','E','C','D','I','G','H']
 
-constructed_tree = binary_tree_from_preorder_inorder(postorder,inorder)
+constructed_tree = binary_tree_from_postorder_inorder(postorder,inorder)
 prPostorder(constructed_tree)
